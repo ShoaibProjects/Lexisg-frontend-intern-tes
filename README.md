@@ -29,7 +29,7 @@ Make sure you have **Node.js** and **npm** installed on your machine. You can do
 
 1.  Clone the repository:
     ```sh
-    git clone [https://github.com/ShoaibProjects/Lexisg-frontend-intern-tes](https://github.com/ShoaibProjects/Lexisg-frontend-intern-tes)
+    git clone https://github.com/ShoaibProjects/Lexisg-frontend-intern-tes
     ```
 2.  Navigate to the project directory:
     ```sh
