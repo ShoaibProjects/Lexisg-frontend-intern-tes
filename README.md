@@ -23,13 +23,13 @@ To get a local copy up and running, follow these simple steps.
 
 ### Prerequisites
 
-Make sure you have Node.js and npm installed on your machine. You can download them from [here](https://nodejs.org/).
+Make sure you have **Node.js** and **npm** installed on your machine. You can download them from [here](https://nodejs.org/).
 
 ### Installation & Execution
 
 1.  Clone the repository:
     ```sh
-    git clone [https://github.com/your-username/Lexisg-frontend-intern-test.git](https://github.com/your-username/Lexisg-frontend-intern-test.git)
+    git clone [https://github.com/ShoaibProjects/Lexisg-frontend-intern-tes](https://github.com/ShoaibProjects/Lexisg-frontend-intern-tes)
     ```
 2.  Navigate to the project directory:
     ```sh
@@ -45,6 +45,14 @@ Make sure you have Node.js and npm installed on your machine. You can download t
     ```
 
 The application will be available at `http://localhost:3000`.
+
+---
+
+## 🚀 Deployment
+
+The application is deployed and can be accessed live at the following link:
+
+**Live Demo**: **[https://lexisg-frontend-intern-tes.vercel.app/](https://lexisg-frontend-intern-tes.vercel.app/)**
 
 ---
 
