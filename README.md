@@ -13,7 +13,7 @@ This project is a minimal frontend interface for a Lexi-like legal assistant, cr
 
 ## 📸 Screen Recording
 
-![Lexi Legal Assistant Screen Recording](https://github.com/user-attachments/assets/ababea82-8a60-46fc-a5a1-7dd3f80ae945)
+https://github.com/user-attachments/assets/ababea82-8a60-46fc-a5a1-7dd3f80ae945
 
 ---
 
