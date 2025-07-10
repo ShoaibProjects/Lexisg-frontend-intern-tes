@@ -1,70 +1,89 @@
-# Getting Started with Create React App
+# Lexisg-frontend-intern-test
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a minimal frontend interface for a Lexi-like legal assistant, created as a solution for the Lexi Frontend Assignment. The application allows users to ask a legal question, receive a generated answer, and view citations from relevant documents.
 
-## Available Scripts
+## 🚀 Features
 
-In the project directory, you can run:
+-   **Chat-like Interface**: A user-friendly, chat-based UI for a natural and intuitive user experience.
+-   **Simulated API Interaction**: Demonstrates frontend-backend communication with a mock API, showcasing how to handle asynchronous data fetching and loading states.
+-   **Interactive Citations**: Each generated answer includes a clickable citation that opens the source PDF in a new tab, allowing users to verify the information.
+-   **Responsive Design**: The interface is fully responsive and works seamlessly on both desktop and mobile devices.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 📸 Screenshot
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![Lexi Legal Assistant Screenshot](https://github.com/user-attachments/assets/377a0ba1-16d1-4e78-95bd-76c245ab660c)
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🛠️ How to Run the Project
 
-### `npm run build`
+To get a local copy up and running, follow these simple steps.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Prerequisites
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Make sure you have Node.js and npm installed on your machine. You can download them from [here](https://nodejs.org/).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Installation & Execution
 
-### `npm run eject`
+1.  Clone the repository:
+    ```sh
+    git clone [https://github.com/your-username/Lexisg-frontend-intern-test.git](https://github.com/your-username/Lexisg-frontend-intern-test.git)
+    ```
+2.  Navigate to the project directory:
+    ```sh
+    cd Lexisg-frontend-intern-test
+    ```
+3.  Install NPM packages:
+    ```sh
+    npm install
+    ```
+4.  Run the application:
+    ```sh
+    npm start
+    ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The application will be available at `http://localhost:3000`.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 📂 How Citation Linking Was Handled
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The citation linking is managed within the main component through a simulated API call. Here’s a breakdown of the process:
 
-## Learn More
+1.  **Simulated API Response**: The `simulateApiCall` function returns a promise that resolves with a mock API response containing the answer and an array of citations. Each citation object includes the text, the source file name, and a direct link to the PDF document.
+    ```javascript
+    const response = {
+      answer: "Yes, under Section 166 of the Motor Vehicles Act, 1988...",
+      citations: [
+        {
+          text: "As the age of the deceased at the time of accident was held to be about 54–55 years...",
+          source: "Dani_Devi_v_Pritam_Singh.pdf",
+          link: "[https://lexisingapore-my.sharepoint.com/:b:/g/personal/harshit_lexi_sg/EdOegeiR_gdBvQxdyW4xE6oBCDgj5E4Bo5wjvhPHpqgIuQ?e=TEu4vz](https://lexisingapore-my.sharepoint.com/:b:/g/personal/harshit_lexi_sg/EdOegeiR_gdBvQxdyW4xE6oBCDgj5E4Bo5wjvhPHpqgIuQ?e=TEu4vz)"
+        }
+      ]
+    };
+    ```
+2.  **Rendering Citations**: The UI maps over the `citations` array and renders each citation within the bot's message bubble.
+3.  **Clickable Link**: Each citation is rendered as an `<a>` tag. The `href` attribute is set to the `link` from the citation object. `target="_blank"` and `rel="noopener noreferrer"` are used to open the PDF in a new tab for security and a better user experience.
+    ```jsx
+    <a
+      href={citation.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="mt-3 flex items-center gap-2 text-indigo-400 hover:text-indigo-300 text-sm font-medium transition-colors"
+    >
+      <LuFileText size={16} />
+      <span>{citation.source}</span>
+    </a>
+    ```
+4.  **Bonus: Scrolling and Highlighting**: While the current implementation opens the PDF in a new tab, a more advanced solution for scrolling to a specific paragraph could be achieved by appending a hash fragment to the URL (e.g., `#page=2&highlight=...`), provided the PDF viewer supports it. This project keeps it simple by linking directly to the document.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 💻 Built With
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+-   [React.js](https://reactjs.org/)
+-   [Tailwind CSS](https://tailwindcss.com/)
+-   [React Icons](https://react-icons.github.io/react-icons/)
