@@ -1,3 +1,7 @@
+
+
+https://github.com/user-attachments/assets/ababea82-8a60-46fc-a5a1-7dd3f80ae945
+
 # Lexisg-frontend-intern-test
 
 This project is a minimal frontend interface for a Lexi-like legal assistant, created as a solution for the Lexi Frontend Assignment. The application allows users to ask a legal question, receive a generated answer, and view citations from relevant documents.
